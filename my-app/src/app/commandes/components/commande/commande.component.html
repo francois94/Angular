@@ -1,0 +1,14 @@
+<div class="card-header">
+  <span [appState]="commande.state"></span>
+
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">{{ commande.name }}</h4>
+    <p class="card-text">Référence : {{ commande.reference }}</p>
+    <div *ngIf="state.LIVREE != commande.state">
+
+      <button class="btn btn-primary" *ngIf="state.ENCOURS !=commande.state" (click)="changeState(commande,state.ENCOURS)">En cours</button>
+      <button class="btn btn-primary" (click)="changeState(commande, state.LIVREE)" >Livrée</button>
+
+    </div>
+ </div>
